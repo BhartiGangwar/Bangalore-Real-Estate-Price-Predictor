@@ -15,7 +15,7 @@ This project engineers a machine learning solution to accurately predict Bangalo
 
 ## 🖼️ Demo
 
-[![Project Demo Image](https://github.com/BhartiGangwar/Bangalore-Real-Estate-Price-Predictor/blob/main/BangloreHomePrices/pro_demo.png)]
+![Project Demo Image](https://github.com/BhartiGangwar/Bangalore-Real-Estate-Price-Predictor/blob/main/BangloreHomePrices/pro_demo.png)
 
 
 ## 🛠️ Tech Stack
