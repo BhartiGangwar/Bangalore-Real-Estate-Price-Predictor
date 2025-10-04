@@ -73,7 +73,7 @@ function onPageLoad() {
     console.log("document loaded");
     var url = "https://bangalore-real-estate-price-predictor-12.onrender.com/get_location_names";
     $.get(url, function(data, status) {
-        console.log("got response for get_location_names request");
+        console.log("got response for get_location_names request", status, data);
         if(data) {
             var locations = data.locations;
             var uiLocations = document.getElementById("uiLocations");
@@ -84,8 +84,8 @@ function onPageLoad() {
                 $('#uiLocations').append(opt);
             }
         }
-    }).fail(function() {
-        console.log("Error loading locations");
+    }).fail(function(jqxhr, textStatus, error) {
+        console.error("Error loading locations", textStatus, error, jqxhr && jqxhr.status);
     });
 }
 
