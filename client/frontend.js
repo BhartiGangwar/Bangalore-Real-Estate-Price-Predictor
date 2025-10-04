@@ -37,7 +37,7 @@ function onClickedEstimatePrice() {
         return;
     }
 
-    var url = "http://127.0.0.1:5000/predict_home_price";
+    var url = "https://bangalore-real-estate-price-predictor-12.onrender.com/predict_home_price";
 
     // Show loading state
     estPrice.innerHTML = `
@@ -71,7 +71,7 @@ function onClickedEstimatePrice() {
 
 function onPageLoad() {
     console.log("document loaded");
-    var url = "http://127.0.0.1:5000/get_location_names";
+    var url = "https://bangalore-real-estate-price-predictor-12.onrender.com/get_location_names";
     $.get(url, function(data, status) {
         console.log("got response for get_location_names request");
         if(data) {
