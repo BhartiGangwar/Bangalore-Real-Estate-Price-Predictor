@@ -1,5 +1,9 @@
 from flask import Flask, request, jsonify
-import util
+
+# Use package-relative import. When gunicorn imports `server.server:app`, the
+# `server` package is on sys.path and a relative import ensures `util` is
+# resolved to `server.util` instead of requiring a top-level `util` module.
+from . import util
 
 app = Flask(__name__)
 @app.route('/')
@@ -11,6 +15,7 @@ def home():
 def get_location_names():
     response = jsonify({
         'locations': util.get_location_names()
+
     })
     response.headers.add('Access-Control-Allow-Origin', '*')
 
@@ -33,4 +38,6 @@ def predict_home_price():
 if __name__ == "__main__":
     print("Starting Python Flask Server For Home Price Prediction...")
     util.load_saved_artifacts()
-    app.run()
+    # Bind to 0.0.0.0 for container / hosting environments and keep default port
+    # 5000 for local dev. In production (Render) gunicorn will be used instead.
+    app.run(host="0.0.0.0", port=5000)

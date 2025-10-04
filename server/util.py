@@ -1,3 +1,4 @@
+import os
 import pickle
 import json
 import numpy as np
@@ -26,14 +27,21 @@ def load_saved_artifacts():
     print("loading saved artifacts...start")
     global  __data_columns
     global __locations
+    # Build artifact paths relative to this util.py file. This works when
+    # running locally from the project root and under WSGI servers like
+    # gunicorn which import the module from the package.
+    base_dir = os.path.dirname(__file__)
+    artifacts_dir = os.path.join(base_dir, "artifacts")
 
-    with open("./artifacts/columns.json", "r") as f:
+    cols_path = os.path.join(artifacts_dir, "columns.json")
+    with open(cols_path, "r", encoding="utf-8") as f:
         __data_columns = json.load(f)['data_columns']
         __locations = __data_columns[3:]  # first 3 columns are sqft, bath, bhk
 
     global __model
     if __model is None:
-        with open('./artifacts/banglore_home_prices_model.pickle', 'rb') as f:
+        model_path = os.path.join(artifacts_dir, 'banglore_home_prices_model.pickle')
+        with open(model_path, 'rb') as f:
             __model = pickle.load(f)
     print("loading saved artifacts...done")
 
