@@ -8,7 +8,6 @@
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![Machine Learning](https://img.shields.io/badge/ML-Scikit--learn-F7931E?style=flat&logo=scikit-learn&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green.svg?style=flat)
 
 ---
 
@@ -76,7 +75,7 @@ pytest tests/test_model.py
 └── requirements.txt     # Dependencies
 ```
 
----
+
 
 ## 🛠️ Tech Stack
 
@@ -87,20 +86,7 @@ pytest tests/test_model.py
 
 ---
 
-## 🤝 Contributing
 
-Contributions are welcome! Feel free to:
-- 🐛 Report bugs
-- 💡 Suggest features
-- 🔧 Submit pull requests
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
 
 <div align="center">
 
