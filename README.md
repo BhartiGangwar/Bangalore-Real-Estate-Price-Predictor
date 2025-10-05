@@ -96,6 +96,5 @@ pytest tests/test_model.py
 
 **Made with ❤️ for Bangalore Real Estate**
 
-⭐ Star this repo if you find it helpful!
 
 </div>
